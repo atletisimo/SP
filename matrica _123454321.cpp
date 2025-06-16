@@ -28,7 +28,7 @@ int main() {
     int n;
     cin >> n;
 
-    for (int i = 0; i < n; i++) {//do 5
+    for (int i = 0; i < n; i++) {//do 5,ovoj ciklus go kontrolira brojot na redovi ,znaci ke se izvrsi tocno n pati za sekoj red,znaci kontrolira broj na red
         int limit = n - i; //limit 5-1=4 broj na index,do taa pozicija
 
         // растечки дел
