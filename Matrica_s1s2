@@ -1,0 +1,50 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+    int n, m;
+    cin >> n >> m;
+
+    int a[100][100];
+
+    // Вчитување на матрицата
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < m; j++){
+            cin >> a[i][j];
+        }
+    }
+
+    // Пресметка
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < m; j++){ 
+            int s1 = 0, s2 = 0;
+
+            // Собери десно од тековниот елемент (вклучувајќи го)
+            for(int k = j; k < m; k++){
+                s1 += a[i][k];
+            }
+
+            // Собери под елементот (вклучувајќи го)
+            for(int k = i; k < n; k++){
+                s2 += a[k][j];
+            }
+
+            // Заменa со поголема вредност
+            if(s1 > s2){
+                a[i][j] = s1;
+            } else {
+                a[i][j] = s2;
+            }
+        }
+    }
+
+    // Печатење
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < m; j++){
+            cout << a[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
