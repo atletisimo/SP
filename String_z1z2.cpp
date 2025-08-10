@@ -42,5 +42,57 @@ int main() {
  }
 
 
+/*
+
+#include<iostream>
+#include<cstring>
+using namespace std;
+int main() {
+    char z1;
+    char z2;
+    char str[100];
+    cin>>z1>>z2;
+    cin.ignore();
+    while (true) {
+        cin.getline(str,100);
+        if (strcmp(str,"#")==0) {
+            break;
+        }
+
+
+        int startPos=-1;
+        int endPos=-1;
+
+        for (int i=0; i<strlen(str); i++) {
+            if (str[i]==z1) {
+                startPos=i;
+            }
+        }
+        for (int i=0; i<strlen(str); i++) {
+            if (str[i]==z2) {
+                endPos=i;
+            }
+        }
+
+        for (int i=startPos+1; i<endPos; i++) {
+            cout<<str[i];
+
+        }
+        cout<<endl;
+
+    }
+}
+
+
+
+
+
+
+
+ */
+
+ 
+
+
 }
 
