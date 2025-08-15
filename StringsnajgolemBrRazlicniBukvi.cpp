@@ -24,6 +24,15 @@ int main() {
         int len = 0;
         while (word[len] != '\0') len++;
         if (len < 4) continue;
+        /*
+ИСТО СО 
+             while (cin >> word) {
+        // Игнорирај зборови помали од 4 букви
+        int len = strlen(word);  // користиме strlen наместо циклус
+        if (len < 4) continue;
+
+
+            */
 
         // Проверка на уникатни букви
         bool letters[26] = {false};
