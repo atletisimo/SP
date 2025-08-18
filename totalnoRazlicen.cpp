@@ -9,36 +9,29 @@
 Задачата да се реши без употреба на низи и матрици.*/
 #include<iostream>
 using namespace std;
-bool daliRazlicni(int n,int x) {
 
-    while (n>0) {
-        int broj_cifra=n%10;
-        int kopija_x=x;
-        while (kopija_x>0) {
-            int posledna_cifra_x=kopija_x%10;
-
-            if (broj_cifra==posledna_cifra_x) {
-                return false;
-            }
-            kopija_x=kopija_x/10;
-
+bool daliRazlicni(int a, int b) {
+    while(a > 0) {
+        int cifraA = a % 10;
+        int tempB = b;
+        while(tempB > 0) {
+            int cifraB = tempB % 10;
+            if(cifraA == cifraB) return false; // има иста цифра
+            tempB /= 10;
         }
-        n=n/10;
+        a /= 10;
     }
-    return true;
-
+    return true; // нема иста цифра
 }
+
 int main() {
-    int n,x;
-    cin>>n;//8
-    cin>>x;//7
-    for (int i=n-1;i>0;i--) {
-        if (daliRazlicni(i,x)) {
-            cout<<i;
-            break;
+    int n, x;
+    cin >> n >> x;
+
+    for(int i=n-1; i>=0; i--) {
+        if(daliRazlicni(i, x)) {
+            cout << i;
+            break; // најдовме најблизок помал број → завршуваме
         }
     }
-
-
-
 }
