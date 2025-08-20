@@ -64,3 +64,50 @@ int main() {
 
     return 0;
 }
+/*
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, m;
+    int matrica[100][100];
+
+    cin >> n >> m;
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < m; j++)
+            cin >> matrica[i][j];
+
+    int sumRed = 0, sumCol = 0;
+
+    // проверка на редици
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j <= m - 3; j++) {
+            if (matrica[i][j] == 1 && matrica[i][j+1] == 1 && matrica[i][j+2] == 1) {
+                sumRed++;
+                break; // оваа редица ја броиме еднаш
+            }
+        }
+    }
+
+    // проверка на колони
+    for (int j = 0; j < m; j++) {
+        for (int i = 0; i <= n - 3; i++) {
+            if (matrica[i][j] == 1 && matrica[i+1][j] == 1 && matrica[i+2][j] == 1) {
+                sumCol++;
+                break; // оваа колона ја броиме еднаш
+            }
+        }
+    }
+
+  
+    cout <<sumRed + sumCol << endl;
+
+    return 0;
+}
+
+
+
+
+*/
