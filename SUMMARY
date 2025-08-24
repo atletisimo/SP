@@ -654,3 +654,119 @@ int main() {
 
 
 
+24./*
+ТОТАЛНО РАЗЛИЧЕН БРОЈ ПОМАЛ ОД N
+Еден број е тотално различен од друг ако и само ако во него не се појавува ниту една од цифрите на другиот број.
+
+#include<iostream>
+using namespace std;
+int totalnoRazlicen(int n,int x) {
+    //totalno razlicen od x
+
+    while (n>0) {
+        int temp2=x;
+        int cifraN=temp1%10;
+        while (temp2>0) {
+            int cifraX=temp2%10;
+
+            if (cifraN==cifraX) {
+                return 0;
+
+            }
+            temp2=temp2/10;
+        }
+        n=n/10;
+    }
+    return 1;
+}
+int main() {
+    int n,x;
+    cin>>n>>x;
+    for (int i=n-1;i>=0;i--) {
+        if (totalnoRazlicen(i,x)) {
+            cout << i << endl;
+            break;
+        }
+    }
+}
+
+
+25.СТАТИСТИКА НА БРОЕВИ
+*Од тастатура се читаат непознат број на позитивни цели броеви (со максимум 5 цифри) се додека не се внесе нешто различно
+*од број. За секој број треба да се најде позицијата (од десно на лево) на првото појавување на најголемата цифра во
+*составот на бројот (цифрата на единици се наоѓа на позиција 0). Потоа, да се испечати статистика за
+*позициите на најдените цифри со максимална вредност во следниот формат:
+[позиција]: [вкупно броеви чија максимална цифра се наоѓа на таа позиција]
+0: 2
+
+1: 3
+
+2: 1
+
+3: 1
+
+4: 1
+
+за броевите 97654 48654 12345 12343 1263 12443 12643 12777
+ */
+#include <iostream>
+using namespace std;
+
+int main() {
+    int stats[5] = {0}; // статистика за позициите 0 до 4
+    int number;
+
+    while (cin >> number) {
+        if (number <= 0 || number > 99999) continue; // игнорира невалидни броеви
+
+        int temp = number;
+        int maxDigit = -1;
+        int position = 0;
+        int maxPos = -1;
+
+        while (temp > 0) {
+            int digit = temp % 10;
+            if (digit > maxDigit) {
+                maxDigit = digit;
+                maxPos = position;
+            }
+            temp /= 10;
+            position++;
+        }
+
+
+            stats[maxPos]++;
+        }
+
+
+    // Печати статистика
+    for (int i = 0; i < 5; i++) {
+        cout << i << ": " << stats[i] << endl;
+    }
+
+    return 0;
+}
+
+
+26.Најмалиот елемент во низата кој се појавува парен број пати во низата.
+
+
+int minEl = -999999;
+    bool found = false;
+
+    for (int i = 0; i < n; i++) {
+        int counter = 0;
+        for (int j = 0; j < n; j++) {
+            if (a[i] == a[j]) {
+                counter++;
+            }
+        }
+
+        if (counter % 2 == 0 && a[i] < minEl) {
+            minEl = a[i];
+            found = true;
+        }
+    }
+
+
+
