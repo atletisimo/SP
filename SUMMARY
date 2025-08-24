@@ -69,3 +69,43 @@ bool isPalindrome(char *str) {
         for (int k = 0; k < len; k++) {
             niz[k] = tolower(niz[k]);
         }
+
+
+6.ВО МАТРИЦА ПРОВЕРКА ПО РЕДИЦИ АКО САКАМЕ 
+
+прво го селектираме for циклусот за редици пример 
+
+ // Проверка по редици
+    for (int i = 0; i < m; i++) {
+        int rediciCounter = 0;
+        bool found = false;
+        for (int j = 0; j < n; j++) {
+            if (matrica[i][j]==1) rediciCounter++;
+            else rediciCounter = 0;
+
+            if (rediciCounter >= 3) found = true;
+        }
+        if (found) vkupnoRedici++;
+    }
+
+
+ВО МАТРИЦА ПРОВЕРКА ПО КОЛОНИ АКО САКАМЕ 
+
+прво го селектираме for циклусот за колони пример 
+
+// Проверка по колони
+    for (int j = 0; j < n; j++) {
+        int koloniCounter = 0;
+        bool found = false;
+        for (int i = 0; i < m; i++) {
+            if (matrica[i][j]==1) koloniCounter++;
+            else koloniCounter = 0;
+
+            if (koloniCounter >= 3) found = true;
+        }
+        if (found) vkupnoKoloni++;
+    }
+
+
+7.
+
